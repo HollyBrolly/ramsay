@@ -9,7 +9,7 @@
 
 -export([measure/1, measure/2]).
 
-%% Note(Serei): this is far from being complete, check out Wikipedia
+%% Note(Sergei): this is far from being complete, check out Wikipedia
 %% for inspiration: 'http://en.wikipedia.org/wiki/Metric_prefix'.
 -type prefix() :: mega | kilo | milli | micro | nano.
 -type unit() :: seconds
@@ -21,7 +21,7 @@
 
 -spec measure(metric(number())) -> metric(number()).
 measure({FromTag, Value}) ->
-    measure({FromTag, Value}, seconds).
+    measure({FromTag, Value}, {milli, seconds}).
 
 -spec measure(metric(number()), unit()) -> metric(number()).
 measure({FromTag, Value}, ToTag) ->

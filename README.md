@@ -30,8 +30,10 @@ file:
 Although the unit of `gossip_interval` is documented on [Riak Wiki] [2],
 it's hard to tell **what** is it, just looking at the configuration file.
 Of course, one way of dealing with this is by having a convention; for
-example you might decide that *all time values are in milliseconds*. But
-we think a better way is to use *tagged* values:
+example you might decide that *all time values* in your project are in
+milliseconds. Obviously that doesn't work for people not familiar with
+the convention; `ramsay` solves the readability problem by using *tagged*
+values:
 
 ```erlang
 {default_bucket_props, [
@@ -41,7 +43,7 @@ we think a better way is to use *tagged* values:
 ]}
 ```
 
-Neat, huh? here's how this value can be used from inside the application:
+Neat, huh? here's how this looks on the Erlang side:
 
 ```erlang
 start([]) ->
